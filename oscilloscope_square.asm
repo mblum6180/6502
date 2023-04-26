@@ -1,3 +1,5 @@
+    CPU 6502
+
 ; Define memory addresses for the 6522 VIA registers
 VIA_PORTA   = $6000
 VIA_PORTB   = $6001
@@ -13,7 +15,7 @@ MoveSpeedX    = 3
 MoveSpeedY    = 2
 
 ; Main program
-        * = $8000
+    ORG     $8000
 start:
     LDX #0
     STX VIA_PORTA
@@ -167,7 +169,7 @@ NoAdd:
     RTS
 
 ; Define temporary storage for calculations
-CurrentAngle .res 1
-ResultX       .res 1
-ResultY       .res 1
-Temp          .res 1
+CurrentAngle DS 1
+ResultX      DS 1
+ResultY      DS 1
+Temp         DS 1
